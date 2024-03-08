@@ -1,12 +1,24 @@
 function ListGroup() {
+  const items = [
+    {
+      id: 1,
+      name: "Item 1",
+    },
+    {
+      id: 2,
+      name: "Item 2",
+    },
+    {
+      id: 3,
+      name: "Item 3",
+    },
+  ];
   return (
     <>
       <h1>List Group</h1>
-      <ul className="list-group">
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
-      </ul>
+      {items.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
     </>
   );
 }

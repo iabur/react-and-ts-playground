@@ -1,20 +1,9 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
+import { BsCalendar2DayFill } from "react-icons/bs";
 
 function App() {
-  const [isAlertVisible, setAlertVisible] = useState(false);
-
   return (
     <div>
-      {isAlertVisible === true && (
-        <Alert onClose={() => setAlertVisible(false)} children="Alert"></Alert>
-      )}
-      <Button
-        name="Click me"
-        color="primary"
-        onclick={() => setAlertVisible(true)}
-      />
+      <BsCalendar2DayFill color="red" size={100} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 function ListGroup() {
-  const items = [
+  let items = [
     {
       id: 1,
       name: "Item 1",
@@ -13,6 +13,17 @@ function ListGroup() {
       name: "Item 3",
     },
   ];
+
+  //   items = [];
+
+  if (items.length === 0) {
+    return (
+      <>
+        <h1>List Group</h1>;<h1>No items</h1>;
+      </>
+    );
+  }
+
   return (
     <>
       <h1>List Group</h1>

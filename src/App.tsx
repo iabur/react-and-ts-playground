@@ -1,11 +1,9 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
     <div>
-      <Alert>
-        <h1>This Is Alert</h1>
-      </Alert>
+      <Button name="Click me" color="primary" />
     </div>
   );
 }

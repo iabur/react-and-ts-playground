@@ -31,7 +31,11 @@ function ListGroup() {
       {getMessage()}
       <ul className="list-group">
         {items.map((item) => (
-          <li className="list-group-item" onClick={getEvent} key={item.id}>
+          <li
+            className="list-group-item active"
+            onClick={getEvent}
+            key={item.id}
+          >
             {item.name}
           </li>
         ))}

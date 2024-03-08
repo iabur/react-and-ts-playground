@@ -2,7 +2,7 @@ import ListGroup from "./components/ListGroup";
 
 function App() {
   let items = ["Dhaka", "Chittagong", "Sylhet", "Khulna", "Dinajpur"];
-  let printSelectedItems = (item: String[]) => {
+  let printSelectedItems = (item: String) => {
     console.log(item);
   };
   return (

@@ -3,7 +3,7 @@ import { useState } from "react";
 interface Prop {
   items: String[];
   heading: String;
-  onSelectedItems: (items: String[]) => void;
+  onSelectedItems: (items: String) => void;
 }
 
 function ListGroup({ items, heading, onSelectedItems }: Prop) {
@@ -29,7 +29,7 @@ function ListGroup({ items, heading, onSelectedItems }: Prop) {
             }
             onClick={() => {
               changeState(index);
-              onSelectedItems([item]);
+              onSelectedItems(item);
             }}
             key={index}
           >

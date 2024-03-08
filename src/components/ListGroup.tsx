@@ -14,19 +14,18 @@ function ListGroup() {
     },
   ];
 
-  //   items = [];
+  items = [];
 
-  if (items.length === 0) {
-    return (
-      <>
-        <h1>List Group</h1>;<h1>No items</h1>;
-      </>
-    );
-  }
+  const getMessage = () => {
+    if (items.length === 0) {
+      return <h1>No items found</h1>;
+    }
+  };
 
   return (
     <>
       <h1>List Group</h1>
+      {getMessage()}
       {items.map((item) => (
         <li key={item.id}>{item.name}</li>
       ))}

@@ -1,3 +1,6 @@
+// import mouse event from react
+import { MouseEvent } from "react";
+
 function ListGroup() {
   let items = [
     {
@@ -14,22 +17,27 @@ function ListGroup() {
     },
   ];
 
-  items = [];
-
   const getMessage = () => {
     if (items.length === 0) {
       return <h1>No items found</h1>;
     }
   };
 
+  const getEvent = (event: MouseEvent) => console.log(event);
+
   return (
     <>
-      <h1>List Group</h1>
+      <h1 className="list-group">List Group</h1>
       {getMessage()}
-      {items.map((item) => (
-        <li key={item.id}>{item.name}</li>
-      ))}
+      <ul className="list-group">
+        {items.map((item) => (
+          <li className="list-group-item" onClick={getEvent} key={item.id}>
+            {item.name}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
+
 export default ListGroup;

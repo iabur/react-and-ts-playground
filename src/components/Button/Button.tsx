@@ -1,3 +1,5 @@
+import style from "./Button.module.css";
+
 interface ButtonProps {
   name: string;
   color?:
@@ -12,9 +14,12 @@ interface ButtonProps {
   onclick: () => void;
 }
 
-const Button = ({ name, color = "primary", onclick }: ButtonProps) => {
+const Button = ({ name, color = "danger", onclick }: ButtonProps) => {
   return (
-    <button className={`btn btn-${color}`} onClick={onclick}>
+    <button
+      className={[style.btn, style["btn-" + color]].join(" ")}
+      onClick={onclick}
+    >
       {name}
     </button>
   );

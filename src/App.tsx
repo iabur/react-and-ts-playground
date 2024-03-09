@@ -1,13 +1,22 @@
-import Like from "./components/Like";
+import { useState } from "react";
 
 function App() {
-  const handleLikeChange = (like: boolean) => {
-    console.log(like);
+  const [currentState, setState] = useState({
+    title: "My form",
+    price: 100,
+  });
+
+  const handleClick = () => {
+    var newObject = {
+      ...currentState,
+      price: currentState.price + 1,
+    };
+    setState(newObject);
   };
 
   return (
     <div>
-      <Like like={false} onLikeChange={handleLikeChange} />
+      <button onClick={handleClick}>{currentState.price} Click me</button>
     </div>
   );
 }

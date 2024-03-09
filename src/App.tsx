@@ -1,21 +1,27 @@
 import { useState } from "react";
 
 function App() {
-  const [currentState, setState] = useState({
-    title: "My form",
-    price: 100,
+  const [customer, setCustomer] = useState({
+    name: "iabur Rahman",
+    address: {
+      city: "Dhaka",
+      country: "Bangladesh",
+    },
   });
 
   const handleClick = () => {
-    setState({
-      ...currentState,
-      price: currentState.price + 1,
+    setCustomer({
+      ...customer,
+      address: {
+        ...customer.address,
+        city: "Chittagong",
+      },
     });
   };
 
   return (
     <div>
-      <button onClick={handleClick}>{currentState.price} Click me</button>
+      <button onClick={handleClick}>{customer.address.city} Click me</button>
     </div>
   );
 }

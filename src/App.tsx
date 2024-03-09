@@ -1,27 +1,22 @@
 import { useState } from "react";
 
 function App() {
-  const [customer, setCustomer] = useState({
-    name: "iabur Rahman",
-    address: {
-      city: "Dhaka",
-      country: "Bangladesh",
-    },
-  });
+  const [array, setArray] = useState(["first", "second", "third"]);
 
   const handleClick = () => {
-    setCustomer({
-      ...customer,
-      address: {
-        ...customer.address,
-        city: "Chittagong",
-      },
-    });
+    // push
+    setArray([...array, "fourth"]);
+    // remove
+    setArray(array.filter((arrayItem) => arrayItem !== "second"));
+    // update;
+    setArray(
+      array.map((arrayItem) => (arrayItem === "first" ? "updated" : arrayItem))
+    );
   };
 
   return (
     <div>
-      <button onClick={handleClick}>{customer.address.city} Click me</button>
+      <button onClick={handleClick}>{array.map((item) => `${item} `)}</button>
     </div>
   );
 }

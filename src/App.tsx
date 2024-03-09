@@ -1,22 +1,26 @@
 import { useState } from "react";
 
 function App() {
-  const [array, setArray] = useState(["first", "second", "third"]);
+  const [bugs, setBugs] = useState([
+    { id: 1, description: "Bug 1", status: "to do" },
+    { id: 2, description: "Bug 2", status: "to do" },
+  ]);
 
   const handleClick = () => {
-    // push
-    setArray([...array, "fourth"]);
-    // remove
-    setArray(array.filter((arrayItem) => arrayItem !== "second"));
-    // update;
-    setArray(
-      array.map((arrayItem) => (arrayItem === "first" ? "updated" : arrayItem))
+    setBugs(
+      bugs.map((bug) => (bug.id === 1 ? { ...bug, status: "done" } : bug))
     );
   };
 
   return (
     <div>
-      <button onClick={handleClick}>{array.map((item) => `${item} `)}</button>
+      {bugs.map((bug) => (
+        <p key={bug.id}>
+          {bug.id} - {bug.description} - {bug.status}
+        </p>
+      ))}
+
+      <button onClick={handleClick}>Update Bug</button>
     </div>
   );
 }

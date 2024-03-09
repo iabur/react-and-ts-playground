@@ -1,9 +1,13 @@
-import Button from "./components/Button/Button";
+import Like from "./components/Like";
 
 function App() {
+  const handleLikeChange = (like: boolean) => {
+    console.log(like);
+  };
+
   return (
     <div>
-      <Button name="Click me" onclick={() => console.log("Button clicked")} />
+      <Like like={false} onLikeChange={handleLikeChange} />
     </div>
   );
 }

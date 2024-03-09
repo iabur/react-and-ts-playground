@@ -7,11 +7,10 @@ function App() {
   });
 
   const handleClick = () => {
-    var newObject = {
+    setState({
       ...currentState,
       price: currentState.price + 1,
-    };
-    setState(newObject);
+    });
   };
 
   return (

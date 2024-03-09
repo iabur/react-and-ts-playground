@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { produce } from "immer";
+
 function App() {
   const [bugs, setBugs] = useState([
     { id: 1, description: "Bug 1", status: "to do" },
@@ -7,8 +9,14 @@ function App() {
   ]);
 
   const handleClick = () => {
+    // update bug using immer library
     setBugs(
-      bugs.map((bug) => (bug.id === 1 ? { ...bug, status: "done" } : bug))
+      produce((draft) => {
+        const bug = draft.find((bug) => bug.id === 1);
+        if (bug) {
+          bug.status = "done";
+        }
+      })
     );
   };
 

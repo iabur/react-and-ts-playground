@@ -1,4 +1,5 @@
 import { FieldValues, useForm } from "react-hook-form";
+
 const Form = () => {
   const { register, handleSubmit } = useForm();
   const printData = (data: FieldValues) => {
@@ -29,7 +30,7 @@ const Form = () => {
           className="form-control"
         />
       </div>
-      <button type="submit" className="button button-primary">
+      <button type="submit" className="btn btn-primary">
         Submit
       </button>
     </form>
